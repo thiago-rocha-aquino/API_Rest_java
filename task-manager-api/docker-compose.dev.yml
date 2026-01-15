@@ -1,0 +1,43 @@
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: taskmanager-postgres
+    environment:
+      POSTGRES_DB: taskmanager
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - taskmanager_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d taskmanager"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Task Manager API - Development
+  api:
+    image: maven:3.9-eclipse-temurin-17
+    container_name: taskmanager-api-dev
+    working_dir: /app
+    command: mvn spring-boot:run
+    environment:
+      DATABASE_URL: jdbc:postgresql://postgres:5432/taskmanager
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: postgres
+      JWT_SECRET: bWluaGEtY2hhdmUtc2VjcmV0YS1tdWl0by1zZWd1cmEtcGFyYS1qd3QtdG9rZW4tMjU2LWJpdHMtb2s=
+      SPRING_PROFILES_ACTIVE: dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+      - taskmanager_maven_cache:/root/.m2
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  taskmanager_postgres_data:
+  taskmanager_maven_cache:
