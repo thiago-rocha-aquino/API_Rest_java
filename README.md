@@ -21,11 +21,11 @@ O Task Manager API é um sistema backend robusto que permite:
 | PostgreSQL | Banco de dados relacional |
 | Flyway | Migrations de banco de dados |
 | JWT  |  Tokens de autenticação |
-| Swagger | | Documentação da API |
-| Lombok | | Redução de boilerplate |
-| JUnit  | | Testes unitários |
-| Mockito | | Mocking para testes |
-| Docker | - | Containerização |
+| Swagger | Documentação da API |
+| Lombok | Redução de boilerplate |
+| JUnit  | Testes unitários |
+| Mockito | Mocking para testes |
+| Docker |  Containerização |
 
 ## Arquitetura
 
