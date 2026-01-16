@@ -12,15 +12,15 @@ O Task Manager API é um sistema backend robusto que permite:
 
 ## Tecnologias Utilizadas
 
-| Tecnologia | Versão | Descrição |
-|------------|--------|-----------|
-| Java |  | Linguagem de programação |
-| Spring Boot |  | Framework principal |
-| Spring Security | | Autenticação e autorização |
-| Spring Data JPA | | Persistência de dados |
-| PostgreSQL | 15 | Banco de dados relacional |
-| Flyway | | Migrations de banco de dados |
-| JWT  |  | Tokens de autenticação |
+| Tecnologia  Descrição |
+|-----------------------|
+| Java | Linguagem de programação |
+| Spring Boot | Framework principal |
+| Spring Security | Autenticação e autorização |
+| Spring Data JPA | Persistência de dados |
+| PostgreSQL | Banco de dados relacional |
+| Flyway | Migrations de banco de dados |
+| JWT  |  Tokens de autenticação |
 | Swagger | | Documentação da API |
 | Lombok | | Redução de boilerplate |
 | JUnit  | | Testes unitários |
