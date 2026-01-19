@@ -275,3 +275,7 @@ task-manager-api/
 - Apenas o dono do projeto pode alterar ou excluir suas tarefas
 - Datas de prazo não podem ser no passado
 - Status inicial da tarefa é sempre TODO
+
+## implementações futuras
+
+- Frontend
